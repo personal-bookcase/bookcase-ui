@@ -1,0 +1,50 @@
+//import
+@import "variable.less";
+@import "grid.less";
+@import "header.less";
+@import "main.less";
+@import "footer.less";
+@import "form.less";
+@import "button.less";
+@import "modal-window.less";
+
+//font-family
+
+@font-face { 
+    font-family: "SFUIDisplay-Regular"; 
+    src: url("../assets/fonts/SFUIDisplay-Regular.eot") format("embedded-opentype"),
+    url("../assets/fonts/SFUIDisplay-Regular.woff") format("woff"), 
+    url("../assets/fonts/SFUIDisplay-Regular.ttf") format("truetype"); 
+    font-weight: normal;
+    font-style: normal;
+    } 
+    
+    @font-face {
+    font-family: "SFUIDisplay-Medium"; 
+    src: url("../assets/fonts/SFUIDisplay-Medium.eot") format("embedded-opentype"),
+    url("../assets/fonts/SFUIDisplay-Medium.woff") format("woff"), 
+    url("../assets/fonts/SFUIDisplay-Medium.ttf") format("truetype"); 
+    font-weight: 500;
+    font-style: normal;
+    } 
+    
+    @font-face { 
+    font-family: "SFUIDisplay-Bold"; 
+    src: url("../assets/fonts/SFUIDisplay-Bold.eot") format("embedded-opentype"),
+    url("../assets/fonts/SFUIDisplay-Bold.woff") format("woff"), 
+    url("../assets/fonts/SFUIDisplay-Bold.ttf") format("truetype"); 
+    font-weight: bold;
+    font-style: normal;
+    } 
+    
+    * {
+         padding: 0;
+         margin: 0;
+    
+     }
+    
+     body {
+         font-family: @font-r, "Verdana", "Geneva", "DejaVu Sans", sans-serif;
+         font-size: @fsize-s;
+         background: @bg-main;
+     }

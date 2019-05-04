@@ -1,0 +1,74 @@
+//gap
+@gap: 78px;
+@gap-l: 48px;
+@gap-m: 40px;
+@gap-s: 20px;
+
+//screen
+@iphonex: 576px;
+@iphonemax: 768px;
+@ipod: 992px;
+@mac: 1280px;
+
+
+//index
+.layout {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 100px 1fr auto;
+}
+
+.layout__container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-column-gap: @gap-s;
+}
+
+.layout__container-main {
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 1585px) 1fr;
+    grid-column-gap: @gap-s;
+  }
+
+.layout__container-main-search {
+     grid-column: span 3;
+}
+
+.layout__container_center {
+    grid-column: 2/ span 1;
+}
+
+//add_book
+
+.layout__container-main-add {
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 1280px) 1fr;
+    grid-column-gap: @gap-s;
+}
+
+
+//media
+@media all and (min-width:@iphonemax) {
+    .layout__container,
+    .layout__container-main {
+        grid-column-gap: @gap-m;
+    }
+   
+}
+
+@media all and (min-width:@ipod) {
+    .layout__container, 
+    .layout__container-main {
+        grid-column-gap: @gap-l;
+    }
+    
+}
+
+@media all and (min-width:@mac) {
+    .layout__container,
+    .layout__container-main {
+        grid-column-gap: @gap;
+    }
+  
+}

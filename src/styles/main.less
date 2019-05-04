@@ -1,0 +1,322 @@
+.main_text() {
+    font-size: @fsize-s;
+    font-family: @font-r;
+    color: @grey-text;
+}
+.card-bg() {
+    background-color: @bg-card;
+        box-shadow: @shadow-card;
+        border-radius: 3px;
+}
+
+
+.bookcards_margin {
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+
+//main search
+.layout__container-main-search {
+    background-image: url(../assets/img/main_search.jpg);
+    height: 200px;
+    background-size: cover;
+}
+
+
+
+//title
+.main-title {
+    font-family: @font-b;
+    font-size: @fsize-xl;
+    line-height: 2*@fsize-xl;
+    color: @bg-comp;
+    position: relative;
+    z-index: 10;    
+
+    &__found {
+        .main_text();
+        font-weight: normal;
+        padding-left: 5px;
+    }
+    &_mar {
+        margin-top: 35px;
+    }
+    &_add-book {
+        margin-top: 45px;
+        margin-bottom: 20px;
+    }
+}
+.main-title_bb::after {
+        position: absolute;
+        left: -8px;
+        top: 38px;
+        content: "";
+        height: 12px;
+        background-color: @orange;
+        width: 230px;
+        z-index: -1;
+    }
+
+.main-title_add-book.main-title_bb::after {
+    width: 162px;
+}
+
+//bookcard
+.bookcards-wrap {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+
+}
+
+.bookcard {
+    max-width: 506px;
+    display: flex;
+    position: relative;
+
+    &__container {
+        background-color: @bg-card;
+        box-shadow: @shadow-card;
+        border-radius: 3px;
+        margin-left: -50px;
+        padding-left: 75px;
+        padding-top: 10px;
+        padding-bottom: 100px;
+
+    }
+    &:hover &__container {
+        background-color: @bg-card-hover;
+        box-shadow: @shadow-card_hover;
+        transition: @transition_1;
+
+    }
+    &:hover .button-type-one {
+        background-color: @bg-comp;
+        border: 2px solid @bg-comp;
+        color: @white;
+        transition: @transition_1;
+    }
+    &:hover .bk-bookdefault {
+        transform: rotate3d(0, 1, 0, 25deg);
+    }
+    &:hover .bk-back {
+        opacity: 1;
+    }
+
+
+    &__title {
+        font-family: @font-m;
+        font-size: @fsize-l;
+        font-weight: 500;
+        color: @black;
+        padding: 20px 20px 15px 0; //max-width: 255px;
+    }
+    &__author {
+        font-family: @font-r;
+        color: @brown;
+        padding-bottom: 15px;
+        padding-right: 20px; //max-width: 255px;
+    }
+    &__year {
+        color: @grey-text;
+        font-family: @font-r;
+        padding-bottom: 15px;
+        padding-right: 20px;
+
+        .fa-pencil-alt {
+            padding-right: 3px;
+        }
+    }
+}
+
+
+// Book Rotate
+.bk-img {
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin: 20px 0;
+
+    .bk-wrapper {
+        position: relative;
+        width: 175px;
+        height: 262px;
+        float: left;
+        z-index: 1;
+        perspective: 1400px;
+    }
+
+    .bk-book {
+        position: absolute;
+        width: 100%;
+        height: 262px;
+        transform-style: preserve-3d;
+        transition: transform 0.5s;
+    }
+    .bk-book > div,
+    .bk-front > div {
+        display: block;
+        position: absolute;
+    }
+    .bk-front {
+        transform-style: preserve-3d;
+        transform-origin: 0% 50%;
+        transition: transform 0.5s;
+        transform: translate3d(0, 0, 20px);
+        z-index: 10;
+
+        > div {
+            z-index: 1;
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+            border-radius: 0 3px 3px 0;
+            box-shadow: inset 4px 0 10px rgba(0, 0, 0, 0.1);
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 1px;
+            bottom: 1px;
+            left: -1px;
+            width: 1px;
+        }
+    }
+    .bk-front,
+    .bk-back,
+    .bk-front > div {
+        width: 175px;
+        height: 262px;
+    }
+    .bk-left {
+        width: 40px;
+        left: -20px;
+    }
+    .bk-back {
+        transform: rotate3d(0, 1, 0, -180deg) translate3d(0, 0, 20px);
+        box-shadow: 5px 7px 15px rgba(0, 0, 0, 0.3);
+        border-radius: 3px 0 0 3px;
+        opacity: 0;
+        transition: opacity 250ms ease-out;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10px;
+            bottom: 0;
+            width: 3px;
+            background: rgba(0, 0, 0, 0.06);
+            box-shadow: 1px 0 3px rgba(255, 255, 255, 0.1);
+        }
+    }
+    .bk-left {
+        height: 262px;
+        transform: rotate3d(0, 1, 0, -90deg);
+
+
+    }
+    .bk-cover {
+        background-repeat: no-repeat;
+        background-position: top left;
+        background-size: 100% 100%;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10px;
+            bottom: 0;
+            width: 3px;
+            background: rgba(0, 0, 0, 0.06);
+            box-shadow: 1px 0 3px rgba(255, 255, 255, 0.1);
+        }
+    }
+    .bk-cover_img_1 {
+        background-image: url(../assets/img/45tatu.jpg);
+        background-color: #EFE3D2;
+    }
+    .bk-cover_img_2 {
+        background-image: url(../assets/img/akunin.jpg);
+        background-color: #353024;
+    }
+    .bk-cover_img_3 {
+        background-image: url(../assets/img/sila.jpg);
+        background-color: #021D42;
+    }
+    .bk-cover_img_4 {
+        background-image: url(../assets/img/vedma.jpg);
+    }
+
+    .bk-front > div,
+    .bk-left {
+        background-color: @brown;
+    }
+    .bk-left_1 {
+        background-color: #EFE3D2;
+    }
+
+    .bk-left_2 {
+        background-color: #353024;
+    }
+    .bk-left_3 {
+        background-color: #021D42;
+    }
+    .bk-left_4 {
+        background-color: #0E222C;
+    }
+}
+
+//--Table cards--
+.table-cards {
+    background: @bg-card;
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: @shadow-card;
+    animation: float 5s infinite;
+
+    &__title {
+        font-family: @font-r;
+        font-size: @fsize-s;
+        color: @grey-text;
+        font-weight: normal;
+        padding: 24px;
+        text-align: left;
+        vertical-align: middle;
+        border-bottom: 0.5px solid @light-grey;
+    }
+    &__text {
+        color: @black;
+        padding: 24px;
+        text-align: left;
+        vertical-align: middle;
+        font-size: @fsize-xs;
+    }
+    &__text:last-child{
+        padding: 3px 24px 3px 24px;
+    }
+    &__row {
+        border-bottom: 0.5px solid @light-grey;
+    }
+    &__row:last-child {
+        border-bottom: none;
+    }
+    .fa-arrow-right{
+        font-size:@fsize-xl;
+        color: @light-grey;
+        border: 1px solid @light-grey;
+        padding: 11px;
+        border-radius: 50%;
+        cursor: pointer;
+    }  
+}
+//hover
+.table-cards__row:hover:not(:last-child) .table-cards__text {
+    background: @bg-card-hover;
+}
+.table-cards__row:hover:not(:last-child) .table-cards__text:first-child {
+    background: @bg-table;
+}
+
+.table-cards__row:hover .fa-arrow-right {
+    color:@orange;
+    border: 1px solid @orange;
+}

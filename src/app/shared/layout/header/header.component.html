@@ -1,0 +1,29 @@
+<header class="header layout__container">
+  <nav class="header__nav layout__container_center">
+    <div class="header__logo-wrap">
+      <a class="header__logo" href="index.html">
+        <img class="header__logo-img" src="../../../../assets/icons/Logo_bookcase.svg" alt="logotype"></a>
+    </div>
+
+    <form class="search-main menu_mar_b" action="/echo" method="post">
+      <input class="search-main__input" type="search" name="search" placeholder="Book title">
+      <button class="search-main__button">
+        <i class="fab fa-sistrix search-main_mod"></i>
+      </button>
+    </form>
+
+    <!--burger-->
+    <input class="header-burger__checkbox" type="checkbox" id="burger">
+    <label class="header-burger header-burger_mar" for="burger">
+      <span class="header__burger"></span>
+      <span class="header__burger"></span>
+      <span class="header__burger"></span>
+    </label>
+    <!-- end burger-->
+
+    <ul class="header__menu header__menu_mar">
+      <li class="header__menu-item"><a class="header__link" href="pages/add_book.html">Add book<i
+            class="fas fa-plus"></i></a></li>
+    </ul>
+  </nav>
+</header>
