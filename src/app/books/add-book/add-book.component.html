@@ -1,0 +1,91 @@
+<main class="layout__container-main-add">
+    <div class="layout__container_center">
+        <h1 class="main-title main-title_add-book main-title_bb">Add book</h1>
+        <div class="form-container">
+            <form action="/add_book" method="POST">
+                <p class="form-add-book">
+                    <label class="form-add-book__label" for="title">Title<span
+                            class="form-add-book__sp">*</span> </label>
+                    <input class="form-add-book__input" id="title" type="text" required></p>
+                <p class="form-add-book">
+                    <label class="form-add-book__label" for="subtitle">Subtitle</label>
+                    <input class="form-add-book__input" id="subtitle" type="text"></p>
+                <p class="form-add-book">
+                    <label class="form-add-book__label" for="author">Author<span
+                            class="form-add-book__sp">*</span></label>
+                    <input class="form-add-book__input" id="author" type="text" required></p>
+
+                <p class="form-add-book">
+                    <label class="form-add-book__label" for="published">Published<span
+                            class="form-add-book__sp">*</span></label>
+                    <select class="form-add-book__input form-add-book__input_sm" id="published" required
+                        placeholder="Month">
+                        <option>January</option>
+                        <option>February</option>
+                        <option>March</option>
+                        <option>April</option>
+                        <option>May</option>
+                        <option>June</option>
+                        <option>July</option>
+                        <option>August</option>
+                        <option>September</option>
+                        <option>October</option>
+                        <option>November</option>
+                        <option>December</option>
+                    </select>
+                    <input class="form-add-book__input form-add-book__input_ss" type="text" placeholder="year"
+                        required></p>
+                <p class="form-add-book">
+                    <label class="form-add-book__label" for="categories">Categories<span
+                            class="form-add-book__sp">*</span></label>
+                    <input class="form-add-book__input form-add-book__input_sl" id="categories" type="text"
+                        placeholder="Add category" required><i class="fas fa-plus"></i></p>
+
+                <p class="form-add-book">
+                    <label class="form-add-book__label" for="type">Type</label>
+                    <select class="form-add-book__input form-add-book__input_sm" id="type">
+                        <option>Electronic</option>
+                        <option>Paper</option>
+                    </select>
+                </p>
+                <p class="form-add-book">
+                    <label class="form-add-book__label" for="publisher">Publisher</label>
+                    <input class="form-add-book__input" id="publisher" type="text"></p>
+                <p class="form-add-book">
+                    <label class="form-add-book__label" for="pages_count">Pages Count</label>
+                    <input class="form-add-book__input form-add-book__input_sm" id="pages_count" type="text">
+                </p>
+                <p class="form-add-book">
+                    <label class="form-add-book__label" for="edition_number">Edition Number</label>
+                    <input class="form-add-book__input form-add-book__input_sm" id="edition_number" type="text">
+                </p>
+                <p class="form-add-book">
+                    <label class="form-add-book__label" for="cycle">Cycle</label>
+                    <input class="form-add-book__input" id="cycle" type="text"></p>
+                <p class="form-add-book">
+                    <label class="form-add-book__label" for="language">Language</label>
+                    <select class="form-add-book__input form-add-book__input_sm" id="language">
+                        <option>RUS</option>
+                        <option>ENG</option>
+                    </select>
+                </p>
+
+                <p class="form-add-book">
+                    <label class="form-add-book__label" for="ISBN">ISBN</label>
+                    <input class="form-add-book__input" id="ISBN" type="text"></p>
+                <p class="form-add-book">
+                    <label class="form-add-book__label form-add-book__label_h"
+                        for="description">Description<span class="form-add-book__sp">*</span></label>
+                    <textarea class="form-add-book__input form-add-book__input_sxl" id="description"></textarea>
+                </p>
+                <p class="form-add-book"><span class="form-add-book__label">Вook cover<span
+                            class="form-add-book__sp">*</span></span><a class="button-type-download" href="#"><i
+                            class="fas fa-camera"></i>Download</a></p>
+
+                <button class="button-type-save button-type-save_mar">
+                    SAVE
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
